@@ -3,16 +3,18 @@
 $hotsdb = "localhost";    
 $basededatos = "Prueba";    
 
-$usuariodb = "root";    
-$clavedb = "3575820as"; 
+$usuariodb = "usuario";    
+$clavedb = "123456"; 
 
 $tabla_db1 = "Persona"; 
 $tabla_db2 = "otratabla";
 
-$conexion_db = mysql_connect("$hotsdb","$usuariodb","$clavedb")
+$conexion_db = new mysqli("$hotsdb","$usuariodb","$clavedb", "$basededatos")
     or die ("Conexión denegada, el Servidor de Base de datos que solicitas NO EXISTE");
-    $db = mysql_select_db("$basededatos", $conexion_db)
+/*
+$conexion_db = mysqli_select_db("$basededatos", $conexion_db)
     or die ("La Base de Datos <b>$basededatos</b> NO EXISTE");
 // cambio de prueba de Jose Daniel
+ */
 ?>
  

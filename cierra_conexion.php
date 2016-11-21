@@ -1,4 +1,4 @@
 <?php
-mysql_close($conexion_db);
+$conexion_db->close();
 ?>
  

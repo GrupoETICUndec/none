@@ -26,7 +26,7 @@ include("abre_conexion.php");
 
 $_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,apellido,direccion,telefono,mail) VALUES ('$nombre','$apellido','$direccion','$telefono',
 '$mail')";
-mysql_query($_GRABAR_SQL); 
+$conexion_db->query($_GRABAR_SQL); 
 
 include("cierra_conexion.php");  
 
