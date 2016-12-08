@@ -16,7 +16,7 @@
 		<input type="submit" id="insertar_datos" name="insertar_datos" value="Insertar" onclick="document.formulario.action='registrar.php'"/>
 	</p>
 </form>  
-
+<!-- Prueba Commit -->
 
 </body>  
 
