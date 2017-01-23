@@ -18,7 +18,7 @@ if(!$_SESSION["validate"]){
 	<?php
 	    echo "Bienvenido ".$_SESSION['nombre'];
 	?>
-	<form method="POST" action="mostrar.php" action="registrar.php">
+	<form method="POST" action="mostrar.php" >
 		<p align="center">
 			<input type="submit" id="mostrar_tabla" name="mostrar_tabla" value="Mostrar" onclick="document.formulario.action='mostrar.php'"/>
 	    </p>
