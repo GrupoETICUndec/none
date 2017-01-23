@@ -1,20 +1,33 @@
 <?php
 
-$hotsdb = "localhost";    
-$basededatos = "Prueba";    
+//$hotsdb = "localhost";    
+//$basededatos = "usersdb";    
+//
+//$usuariodb = "usuario";    
+//$clavedb = "123456"; 
 
-$usuariodb = "usuario";    
-$clavedb = "123456"; 
-
-$tabla_db1 = "Persona"; 
+//$tabla_db1 = "Persona"; 
 
 
-$conexion_db = new mysqli("$hotsdb","$usuariodb","$clavedb", "$basededatos")
-    or die ("Conexión denegada, el Servidor de Base de datos que solicitas NO EXISTE");
 /*
 $conexion_db = mysqli_select_db("$basededatos", $conexion_db)
     or die ("La Base de Datos <b>$basededatos</b> NO EXISTE");
 // cambio de prueba de Jose Daniel
  */
-?>
- 
+
+
+	    $host = 'localhost';
+	    $db   = 'usersdb';
+	    $user = 'usuario';
+	    $pass = '123456';
+	    $charset = 'utf8';
+
+	    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+	    $opt = [
+		PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		PDO::ATTR_EMULATE_PREPARES   => false,
+	    ];
+
+	    $conexion_db = new mysqli("$host","$user","$pass", "$db")
+		or die ("Conexión denegada, el Servidor de Base de datos que solicitas NO EXISTE");
