@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!$_SESSION["validate"]){
+    	echo "<script>";
+	echo 'if(confirm("Debe logear para ingresar"));';
+	echo "location.href='index.html'";
+	echo "</script>";
+
+}
+?>
+
+
 <html>  
 
     <head>  
@@ -20,25 +32,22 @@
 	    $apellido = filter_input(INPUT_POST,"apellido");
 	    $direccion = filter_input(INPUT_POST,"direccion");
 	    $telefono = filter_input(INPUT_POST,"telefono");
-	    if(!filter_input(INPUT_POST, "mail",FILTER_VALIDATE_EMAIL)){
-		echo "<p>Mail invalido</p>";
-		$mail = "";
-	    }else{
-		$mail = filter_input(INPUT_POST, "mail");
-		include("abre_conexion.php");  
 
-		$_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,apellido,direccion,telefono,mail) VALUES ('$nombre','$apellido','$direccion','$telefono','$mail')";
+
+		$mail = filter_input(INPUT_POST, "mail");
+		require_once("abre_conexion.php");  
+
+		$_GRABAR_SQL = "INSERT INTO Persona (nombre,apellido,direccion,telefono,mail) VALUES ('$nombre','$apellido','$direccion','$telefono','$mail')";
 		$conexion_db->query($_GRABAR_SQL); 
 
-		include("cierra_conexion.php"); 
-	    }
+		require_once("cierra_conexion.php"); 
 
  
 
 	    echo "  
 	    <p>Volver.</p>  
 
-	    <p><a href='javascript:history.go(-1)'>ATRÁS</a></p>  
+	    <p><a href='inicio.php'>ATRÁS</a></p>  
 	    ";  
 	?>  
     </body>  

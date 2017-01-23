@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(!$_SESSION["validate"]){
+    	echo "<script>";
+	echo 'if(confirm("Debe logear para ingresar"));';
+	echo "location.href='index.html'";
+	echo "</script>";
+
+}
+
+?>
+
 <html>
 <head>
 	<title>Mostrar tabla</title>
