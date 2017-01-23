@@ -13,7 +13,7 @@ and open the template in the editor.
 	<link rel= 'stylesheet' href="/font/css/font-awesome.min.css">
 	<script type="text/javascript" src="jscode.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link href="/font/css/font-awesome.css" rel="stylesheet">
+	<link href="./font/css/font-awesome.css" rel="stylesheet">
 
     </head>
     <body>
@@ -28,20 +28,20 @@ and open the template in the editor.
 					    <div class="login-group">
 						    <div class="form-group">
 							    <label for="reg_username" class="sr-only">Username</label>
-							    <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+							    <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username" title="Enter Username" required pattern="\w+">
 						    </div>
 						    <div class="form-group">
 							    <label for="reg_password" class="sr-only">Password</label>
-							    <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+                                                            <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password" title="Password must contain at least 8 characters and numbers" required pattern="(?=.*\d)(?=.*[a-z]).{8,40}" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); form.reg_password_confirm.pattern = this.value;">
 						    </div>
 						    <div class="form-group">
 							    <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-							    <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+							    <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password" title="Passwords must match" required pattern="(?=.*\d)(?=.*[a-z]).{8,40}" >
 						    </div>
 
 						    <div class="form-group">
 							    <label for="reg_email" class="sr-only">Email</label>
-							    <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+							    <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email" title="mail@example.com" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
 						    </div>
 						    <div class="form-group">
 							    <label for="reg_fullname" class="sr-only">Full Name</label>
@@ -49,22 +49,36 @@ and open the template in the editor.
 						    </div>
 
 						    <div class="form-group login-group-checkbox">
-							    <input type="radio" class="" name="reg_gender" id="male" value = "male">
+							    <input type="radio" class="" name="reg_gender" id="male" value = "1">
 							    <label for="male">male</label>
 
-							    <input type="radio" class="" name="reg_gender" id="female" value = "female" >
+							    <input type="radio" class="" name="reg_gender" id="female" value = "0" >
 							    <label for="female">female</label>
 						    </div>
 
 						    <div class="form-group login-group-checkbox">
-							    <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                                                        <style scoped type="text/css">
+
+                                                          input[type="checkbox"]:required:invalid + label { color: red; }
+                                                          input[type="checkbox"]:required:valid + label { color: green; }
+                                                          [type="checkbox"]:not(:checked) + label:after,
+                                                          [type="checkbox"]:checked + label:after {
+                                                            content: '✔';
+                                                            top: 0;
+                                                            left: 2px;
+                                                            font-size: 14px;
+                                                          }
+
+                                                        </style>
+							    <input type="checkbox" required class="" id="reg_agree" name="reg_agree">
 							    <label for="reg_agree">i agree with <a href="#">terms</a></label>
 						    </div>
 					    </div>
-					<button type="submit" class="login-button" formmethod="post" formaction="register_process.php"></i></button>
-				    </div>
+                                        <button type="submit" class="login-button" formmethod="post" formaction="register_process.php" ><i class="fa fa-chevron-right"></i></button>
+                                        
+                                    </div>
 				    <div class="etc-login-form">
-					    <p>already have an account? <a href="index.php">login here</a></p>
+					    <p>already have an account? <a href="index.html">login here</a></p>
 				    </div>
 			    </form>
 		    </div>
