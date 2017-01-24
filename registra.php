@@ -27,28 +27,27 @@ if(!$_SESSION["validate"]){
 	    <p><input type="submit" value="Guardar datos" name="B1"></p>  
 	</form>
 	<?php  
-
+	    
 	    $nombre = filter_input(INPUT_POST, "nombre");
 	    $apellido = filter_input(INPUT_POST,"apellido");
 	    $direccion = filter_input(INPUT_POST,"direccion");
 	    $telefono = filter_input(INPUT_POST,"telefono");
-
-
-		$mail = filter_input(INPUT_POST, "mail");
+	    $mail = filter_input(INPUT_POST, "mail");
+	    
+	    if(isset($nombre)){
 		require_once("abre_conexion.php");  
 
 		$_GRABAR_SQL = "INSERT INTO Persona (nombre,apellido,direccion,telefono,mail) VALUES ('$nombre','$apellido','$direccion','$telefono','$mail')";
 		$conexion_db->query($_GRABAR_SQL); 
 
 		require_once("cierra_conexion.php"); 
-
+	    }
  
 
 	    echo "  
 	    <p>Volver.</p>  
 
-	    <p><a href='inicio.php'>ATRÁS</a></p>  
-	    ";  
+	    <p><a href='inicio.php'>ATRÁS</a></p>";  
 	?>  
     </body>  
 
