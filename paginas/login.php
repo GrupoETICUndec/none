@@ -23,7 +23,7 @@
     $data = $stmt->fetch();
     $_SESSION = $data;
     $_SESSION["validate"] = 1;
-    header("location:inicio.php");
+    header("location:../inicio.php");
     }
     else
     {

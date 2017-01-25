@@ -1,30 +1,3 @@
-<?php
-session_start();
-if(!$_SESSION["validate"]){
-    	echo "<script>";
-	echo 'if(confirm("Debe logear para ingresar"));';
-	echo "location.href='index.html'";
-	echo "</script>";
-
-}
-?>
-
-
-<html>  
-
-    <head>  
-	<title>Carga de datos</title>  
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	    <script src="./bootstrap/jQuery/jquery.min.js"></script>
-	    <script src="./bootstrap/js/bootstrap.min.js"></script>
-	    <!--	
-	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    -->	
-    </head>  
-
-    <body>
 	<div class="container center-block">
 	    <div class="col-md-3"></div>
 	<div class="col-md-6">
@@ -55,9 +28,7 @@ if(!$_SESSION["validate"]){
 	</div>
 	<div class="col-md-3"></div> 
 	</div>
-	<div title="Boton regresar" class="text-left">
-		<a href="inicio.php" class="btn btn-default">Volver</a>
-	</div>
+
 	<?php  
 	    
 	    $nombre = filter_input(INPUT_POST, "nombre");
@@ -81,6 +52,3 @@ if(!$_SESSION["validate"]){
 //
 //	    <p><a href='inicio.php'>ATRÁS</a></p>";  
 	?> 
-    </body>  
-
-</html>   

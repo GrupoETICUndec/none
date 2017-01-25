@@ -1,37 +1,17 @@
+
 <?php
-session_start();
-if(!$_SESSION["validate"]){
-    	echo "<script>";
-	echo 'if(confirm("Debe logear para ingresar"));';
-	echo "location.href='index.html'";
-	echo "</script>";
+    // Pequeña lógica para capturar la pagina que queremos abrir
+    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'iniciotxt';
 
-}
-?>
-<html>  
+    // El fragmento de html que contiene la cabecera de nuestra web
+    require_once 'paginas/navbarheader.php';
 
-<head>  
-<title>Guardar datos en una base de datos</title>  
-</head>  
-
-    <body>  
-	<?php
-	    echo "Bienvenido ".$_SESSION['nombre'];
-	?>
-	<form method="POST" action="mostrar.php" >
-		<p align="center">
-			<input type="submit" id="mostrar_tabla" name="mostrar_tabla" value="Mostrar" onclick="document.formulario.action='mostrar.php'"/>
-	    </p>
-	</form>
-	<form method="POST" action="registra.php">  
-		<p align="center">
-			<input type="submit" id="insertar_datos" name="insertar_datos" value="Insertar" onclick="document.formulario.action='registrar.php'"/>
-		</p>
-	</form>  
-	<!-- Prueba Commit -->
-	
-	<p>Para cerrar sesion haga click <a href="cerrarsesion.php">aqui</a></p>
-
-    </body>  
-
-</html>  
+ 
+    /* Estamos considerando que el parámetro enviando tiene el mismo nombre del archivo a cargar, si este no fuera así
+    se produciría un error de archivo no encontrado */
+    require_once 'paginas/' . $pagina . '.php';
+//    require_once './paginas/mostrar.php';
+    // Otra opción es validar usando un switch, de esta manera para el valor esperado le indicamos que página cargar
+ 
+    // El fragmento de html que contiene el pie de página de nuestra web
+    require_once 'paginas/navbarfooter.php';

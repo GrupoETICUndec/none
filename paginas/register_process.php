@@ -42,7 +42,7 @@
 
 		$QUERY = "INSERT INTO usuarios (usuario,password,nombre,email,gender) VALUES ('$username','$password','$Nombre','$mail','$genero')";
 	        $conexion_db->query($QUERY);
-		header ("location:index.html");
+		header ("location:../index.html");
 		
 //	        $tmp = array($username,$password, $Nombre, $mail);
 //		var_dump($tmp);    

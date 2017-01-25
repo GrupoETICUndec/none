@@ -1,30 +1,6 @@
-<?php
-session_start();
 
-if(!$_SESSION["validate"]){
-    	echo "<script>";
-	echo 'if(confirm("Debe logear para ingresar"));';
-	echo "location.href='index.html'";
-	echo "</script>";
 
-}
 
-?>
-
-<html>
-    <head>
-	    <title>Mostrar tabla</title>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	    <script src="./bootstrap/jQuery/jquery.min.js"></script>
-	    <script src="./bootstrap/js/bootstrap.min.js"></script>
-	    <!--	
-	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    -->
-    </head>
-    <body>
-	<div class="container">
 	    <div title="Titulo" class="text-center text-info">
 		<h1>
 		    Tabla Nombres
@@ -75,9 +51,4 @@ if(!$_SESSION["validate"]){
 		?>
 		</tbody>
 	    </table>
-	    <div title="Boton regresar" class="text-center">
-		<a href="inicio.php" class="btn btn-success"> Volver</a>
-	    </div>
-	</div>
-    </body>
-</html>
+
