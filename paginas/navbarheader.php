@@ -43,9 +43,13 @@ and open the template in the editor.
 		  <li class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>" ><a href="?p=iniciotxt">Inicio<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 		  <li class="<?php echo $pagina == 'mostrar' ? 'active' : ''; ?>"><a href="?p=mostrar">Mostrar<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
                   <li class="<?php echo $pagina == 'registra' ? 'active' : ''; ?>"><a href="?p=registra">Registrar<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                  <li class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>" ><a>Perfil<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                  <li><a href="./paginas/cerrarsesion.php">Logout<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
                 </ul>
+		
+		<ul class="sidebar-nav">
+		    <li class="<?php echo $pagina == 'profile' ? 'active' : ''; ?>" ><a href="?p=profile">Perfil<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+		    <li><a href="./paginas/cerrarsesion.php">Logout<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+		</ul>
+
               </div>
 
               <!-- Page content -->

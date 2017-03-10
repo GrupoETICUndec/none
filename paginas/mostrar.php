@@ -25,8 +25,9 @@
 		    $query = "SELECT nombre,apellido,direccion,telefono,mail,idpersona " .
 			"FROM Persona";
 		    $result = $conexion_db->query($query);
+		    $asd = $result->fetchAll();
 		    $numero = 0;
-		    while($row = $result->fetch_assoc())
+		    foreach($asd as $row)
 		    {
 			echo "<tr><td width=\"25%\"><font face=\"verdana\">" . 
 				$row["nombre"] . "</font></td>";

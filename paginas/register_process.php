@@ -35,7 +35,7 @@
 //		PDO::ATTR_EMULATE_PREPARES   => false,
 //	    ];	    
 
-		$conexion_db = new PDO($dsn, $user, $pass, $opt);
+
 
 		$conexion_db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 

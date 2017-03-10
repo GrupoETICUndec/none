@@ -27,7 +27,8 @@ $conexion_db = mysqli_select_db("$basededatos", $conexion_db)
 		PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
 		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 		PDO::ATTR_EMULATE_PREPARES   => false,
+//		PDO::TIMEOUT		     => 300,
 	    ];
 
-	    $conexion_db = new mysqli("$host","$user","$pass", "$db")
+	    $conexion_db = new PDO($dsn, $user, $pass, $opt)
 		or die ("Conexión denegada, el Servidor de Base de datos que solicitas NO EXISTE");

@@ -7,7 +7,7 @@
     
     require_once ('abre_conexion.php');
     
-    $conexion_db = new PDO($dsn, $user, $pass, $opt);
+//    $conexion_db = new PDO($dsn, $user, $pass, $opt);
 
     $conexion_db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     
@@ -21,8 +21,17 @@
     if($dump){
 	
     $data = $stmt->fetch();
+    var_dump($data);
     $_SESSION = $data;
     $_SESSION["validate"] = 1;
+    $remember = filter_input(INPUT_POST, "lg_remember");
+    if($remember == 1 || $remember == 'on')
+                    {
+		    echo "Talfondo";
+                    $hour = time() + 3600 * 24 * 30;
+                    setcookie('username', $data['usuario'], $hour);
+                    setcookie('password', $data['password'], $hour);
+                    }
     header("location:../inicio.php");
     }
     else
@@ -33,3 +42,4 @@
 	echo "</script>";
 
     }
+    

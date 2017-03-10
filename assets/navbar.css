@@ -153,3 +153,52 @@ and open the template in the editor.
     transition: all .4s ease 0s;
 }
 }
+
+
+/*VERTICAL MENU*/
+.vertical{
+  position:relative;
+  width:200px;
+}
+
+/* ALL UL */
+.vertical ul{
+  list-style: none;
+}
+/* ALL LI */
+.vertical li{
+  position:relative;
+
+}
+/* ALL A */
+.vertical a{
+  display:block;
+  color:#eee;
+  text-decoration:none;
+  padding:10px 15px;
+  background:#666;
+  transition:0.2s;
+}
+/* ALL A HOVER */
+.vertical li:hover > a{
+  background:#776;
+}
+
+/* INNER UL HIDE */
+.vertical ul ul{
+  position:absolute;
+  left:0%;
+  top:0;
+  width:100%;
+  visibility:visible;
+  opacity:0;
+  transition: transform 0.2s;
+  transform: translateX(50px);
+}
+/* INNER UL SHOW */
+.vertical li:hover > ul{
+  left:100%;
+  visibility:visible;
+  opacity:1;
+  transform: translateX(0px);
+}

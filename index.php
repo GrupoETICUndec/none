@@ -37,7 +37,16 @@ and open the template in the editor.
 							<input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password" required>
 						</div>
 						<div class="form-group login-group-checkbox">
-							<input type="checkbox" id="lg_remember" name="lg_remember">
+                                                        <style scoped type="text/css">
+                                                          [type="checkbox"]:not(:checked) + label:after,
+                                                          [type="checkbox"]:checked + label:after {
+                                                            content: '✔';
+                                                            top: 0;
+                                                            left: 2px;
+                                                            font-size: 14px;
+                                                          }
+                                                        </style>
+							<input type="checkbox" id="lg_remember" name="lg_remember" value="1">
 							<label for="lg_remember">remember</label>
 						</div>
 					</div>
